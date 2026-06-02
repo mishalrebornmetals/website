@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Mishal Reborn Metals LLP</title>
+  <meta name="description" content="A visual journey through our European source yards, scrap sorting operations, and Surat processing facility. Real material, handled with precision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="static/main_styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav id="navbar">
+    <a class="nav-brand" href="index.html">Mishal Reborn Metals</a>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#services">Services &amp; Products</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Gallery Header ── -->
+  <section class="section" style="padding-top: 10rem; padding-bottom: 2rem;">
+    <div class="glass-tag" style="margin-bottom: 1.5rem;">Operations Gallery</div>
+    <p class="section-label">Our Work</p>
+    <h1 class="section-title">A glimpse into our <em>operations</em></h1>
+    <p class="section-body">From our European source yards to our Surat sorting facility — real material, handled with care and precision.</p>
+  </section>
+
+  <!-- ── Gallery Grid ── -->
+  <section id="gallery" class="section" style="padding-top: 0;">
+    <div class="gallery-grid">
+
+      <div class="gallery-item gallery-wide" onclick="openLightbox(0)">
+        <img src="static/images/g7.jpeg" alt="Aerial view of our Surat sorting facility" loading="lazy" />
+        <div class="gallery-caption">Surat Facility — Overview</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="static/images/g1.png" alt="Scrap grading operations in progress" loading="lazy" />
+        <div class="gallery-caption">Grading — Operations</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="static/images/g2.jpeg" alt="Aluminium scrap sorted and ready for shipping" loading="lazy" />
+        <div class="gallery-caption">Aluminium — Sorted &amp; Ready</div>
+      </div>
+
+      <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
+        <img src="static/images/g3.jpeg" alt="Copper scrap grades displayed for inspection" loading="lazy" />
+        <div class="gallery-caption">Copper — Grades</div>
+      </div>
+
+      <div class="gallery-item gallery-feature" onclick="openLightbox(4)">
+        <img src="static/images/g4.jpeg" alt="Brass scrap lots ready for export" loading="lazy" />
+        <div class="gallery-caption">Brass — Lots</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="static/images/g5.jpeg" alt="Iron scrap undergoing pre-shipment inspection" loading="lazy" />
+        <div class="gallery-caption">Iron — Inspection</div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="static/images/g6.jpeg" alt="Steel scrap at our European source yard" loading="lazy" />
+        <div class="gallery-caption">Steel — European Yard</div>
+      </div>
+
+      <div class="gallery-item gallery-wide" onclick="openLightbox(7)">
+        <img src="static/images/g8.jpeg" alt="Our warehouse and processing floor interior" loading="lazy" />
+        <div class="gallery-caption">Warehouse — Processing Floor</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Lightbox ── -->
+  <div id="lightbox" class="lightbox" style="display: none;" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox(event)">Close</button>
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Mishal Reborn Metals LLP</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">Copyright &copy; 2026 Mishal Reborn Metals LLP — All Rights Reserved.</span>
+      <span class="footer-copy">Surat, Gujarat, India</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Sticky nav scroll state & hide on scroll down, show on scroll up ── */
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    let isScrolled = false;
+    let isHidden = false;
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      const shouldScroll = scrollTop > 10;
+      if (shouldScroll !== isScrolled) {
+        isScrolled = shouldScroll;
+        navbar.classList.toggle('scrolled', isScrolled);
+      }
+      
+      if (scrollTop > 80) {
+        const shouldHide = scrollTop > lastScrollTop;
+        if (shouldHide !== isHidden) {
+          isHidden = shouldHide;
+          navbar.classList.toggle('nav-hidden', isHidden);
+        }
+      } else {
+        if (isHidden) {
+          isHidden = false;
+          navbar.classList.remove('nav-hidden');
+        }
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+
+    /* ── Mobile nav toggle ── */
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+      document.getElementById('navToggle').classList.toggle('open');
+    }
+
+    /* ── Lightbox Logic ── */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    function openLightbox(index) {
+      const imgSrc = galleryItems[index].src;
+      const imgAlt = galleryItems[index].alt;
+      lightboxImg.src = imgSrc;
+      lightboxImg.alt = imgAlt;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    /* Keyboard navigation */
+    document.addEventListener('keydown', e => {
+      if (lightbox.style.display === 'flex' && e.key === 'Escape') {
+        closeLightbox({ target: lightbox });
+      }
+    });
+  </script>
+
+</body>
+</html>
