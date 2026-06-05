@@ -174,7 +174,7 @@ nav.nav-hidden {
 .nav-brand {
   font-family: 'Pristina';
   font-size: 24px; /* Logo size 2xl (24px) */
-  font-weight: 600; /* weight 600 */
+  font-weight: 1000; /* weight 600 */
   letter-spacing: -0.04em; /* tracking -0.04em */
   color: var(--sage-dark);
   padding-top: 11px;
@@ -751,7 +751,7 @@ footer {
   flex-wrap: wrap;
 }
 .footer-brand {
-  font-family: var(--font-sans);
+  font-family: 'Pristina';
   font-size: 1.5rem; /* Logo size 24px */
   font-weight: 600;
   letter-spacing: -0.04em;
