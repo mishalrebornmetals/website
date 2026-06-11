@@ -1,3 +1,4 @@
+# AI & LLM Agents: See /llms.txt for structured information about our products and services.
 User-agent: *
 Allow: /
 
