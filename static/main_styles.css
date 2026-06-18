@@ -180,7 +180,7 @@ nav.nav-hidden {
   transition: opacity 0.2s ease;
 }
 .nav-brand img {
-  height: 33px; /* Increased logo height to 72px to overflow the 64px navbar bounds elegantly */
+  height: 120px; /* Increased logo height to 72px to overflow the 64px navbar bounds elegantly */
   width: auto;
   max-width: 100%;
   object-fit: contain;
