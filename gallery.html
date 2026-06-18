@@ -27,6 +27,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="static/main_styles.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="static/icons/favicon.png">
+  <link rel="apple-touch-icon" href="static/icons/favicon.png">
 
   <!-- Structured Data (JSON-LD) for Gallery Page -->
   <script type="application/ld+json">
@@ -51,16 +54,18 @@
 
   <!-- ── Navigation ── -->
   <nav id="navbar">
-    <a class="nav-brand" href="index.html">MISHAL REBORN METALS</a>
+    <a class="nav-brand" href="/">
+      <img src="static/icons/logo1.png" alt="Mishal Reborn Metals Logo">
+    </a>
     <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About Us</a></li>
-      <li><a href="index.html#services">Services &amp; Products</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About Us</a></li>
+      <li><a href="/#services">Services &amp; Products</a></li>
       <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
+      <li><a href="/#contact">Contact Us</a></li>
     </ul>
   </nav>
 
@@ -69,55 +74,117 @@
     <div class="glass-tag" style="margin-bottom: 1.5rem;">Operations Gallery</div>
     <p class="section-label">Our Work</p>
     <h1 class="section-title">A glimpse into our <em>operations</em></h1>
-    <p class="section-body">From our European source yards to our Surat sorting facility — real material, handled with care and precision.</p>
+    <p class="section-body">From our European source yards to our Surat sorting facility. Real material, handled with care and precision.</p>
   </section>
 
-  <!-- ── Gallery Grid ── -->
-  <section id="gallery" class="section" style="padding-top: 0;">
-    <div class="gallery-grid">
+  <!-- ── Gallery Showcase ── -->
+  <div class="gallery-showcase">
 
-      <div class="gallery-item gallery-wide" onclick="openLightbox(0)">
+    <!-- Surat Facility Overview -->
+    <div class="showcase-card card-full showcase-surat-overview" onclick="openLightbox(0)">
+      <div class="image-wrapper">
         <img src="static/images/g7.jpeg" alt="Aerial view of our Surat sorting facility" loading="lazy" />
-        <div class="gallery-caption">Surat Facility — Overview</div>
       </div>
-
-      <div class="gallery-item" onclick="openLightbox(1)">
-        <img src="static/images/g1.png" alt="Scrap grading operations in progress" loading="lazy" />
-        <div class="gallery-caption">Grading — Operations</div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">European Yard</h3>
+        </div>
+        <span class="showcase-desc">Overview</span>
       </div>
-
-      <div class="gallery-item" onclick="openLightbox(2)">
-        <img src="static/images/g2.jpeg" alt="Aluminium scrap sorted and ready for shipping" loading="lazy" />
-        <div class="gallery-caption">Aluminium — Sorted &amp; Ready</div>
-      </div>
-
-      <div class="gallery-item gallery-wide" onclick="openLightbox(3)">
-        <img src="static/images/g3.jpeg" alt="Copper scrap grades displayed for inspection" loading="lazy" />
-        <div class="gallery-caption">Copper — Grades</div>
-      </div>
-
-      <div class="gallery-item gallery-feature" onclick="openLightbox(4)">
-        <img src="static/images/g4.jpeg" alt="Brass scrap lots ready for export" loading="lazy" />
-        <div class="gallery-caption">Brass — Lots</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(5)">
-        <img src="static/images/g5.jpeg" alt="Iron scrap undergoing pre-shipment inspection" loading="lazy" />
-        <div class="gallery-caption">Iron — Inspection</div>
-      </div>
-
-      <div class="gallery-item" onclick="openLightbox(6)">
-        <img src="static/images/g6.jpeg" alt="Steel scrap at our European source yard" loading="lazy" />
-        <div class="gallery-caption">Steel — European Yard</div>
-      </div>
-
-      <div class="gallery-item gallery-wide" onclick="openLightbox(7)">
-        <img src="static/images/g8.jpeg" alt="Our warehouse and processing floor interior" loading="lazy" />
-        <div class="gallery-caption">Warehouse — Processing Floor</div>
-      </div>
-
     </div>
-  </section>
+
+    <!-- Scrap Grading Operations -->
+    <div class="showcase-card card-left showcase-scrap-grading" onclick="openLightbox(1)">
+      <div class="image-wrapper">
+        <img src="static/images/g1.png" alt="Scrap grading operations in progress" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Scrap Pile</h3>
+        </div>
+        <span class="showcase-desc">Close-Up</span>
+      </div>
+    </div>
+
+    <!-- Aluminium Sorted & Ready -->
+    <div class="showcase-card card-right showcase-aluminium-sorted" onclick="openLightbox(2)">
+      <div class="image-wrapper">
+        <img src="static/images/g2.jpeg" alt="Aluminium scrap sorted and ready for shipping" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Aluminium scrap</h3>
+        </div>
+        <span class="showcase-desc">Sorted &amp; Ready</span>
+      </div>
+    </div>
+
+    <!-- Copper Grades -->
+    <div class="showcase-card card-full showcase-copper-grades" onclick="openLightbox(3)">
+      <div class="image-wrapper">
+        <img src="static/images/g3.jpeg" alt="Copper scrap grades displayed for inspection" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Aluminum scrap</h3>
+        </div>
+        <span class="showcase-desc">Aggregation</span>
+      </div>
+    </div>
+
+    <!-- Brass Lots -->
+    <div class="showcase-card card-left showcase-brass-lots" onclick="openLightbox(4)">
+      <div class="image-wrapper">
+        <img src="static/images/g4.jpeg" alt="Brass scrap lots ready for export" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Scrap Pile</h3>
+        </div>
+        <span class="showcase-desc">Ready for recycling</span>
+      </div>
+    </div>
+
+    <!-- Iron Inspection -->
+    <div class="showcase-card card-right showcase-iron-inspection" onclick="openLightbox(5)">
+      <div class="image-wrapper">
+        <img src="static/images/g5.jpeg" alt="Iron scrap undergoing pre-shipment inspection" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Scrap</h3>
+        </div>
+        <span class="showcase-desc">Inspection</span>
+      </div>
+    </div>
+
+    <!-- Steel European Yard -->
+    <div class="showcase-card card-left showcase-steel-yard" onclick="openLightbox(6)">
+      <div class="image-wrapper">
+        <img src="static/images/g6.jpeg" alt="Steel scrap at our European source yard" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Iron</h3>
+        </div>
+        <span class="showcase-desc">From our European Yard</span>
+      </div>
+    </div>
+
+    <!-- Warehouse Processing Floor -->
+    <div class="showcase-card card-right showcase-warehouse-processing" onclick="openLightbox(7)">
+      <div class="image-wrapper">
+        <img src="static/images/g8.jpeg" alt="Our warehouse and processing floor interior" loading="lazy" />
+      </div>
+      <div class="showcase-info">
+        <div class="showcase-title-group">
+          <h3 class="showcase-title">Warehouse</h3>
+        </div>
+        <span class="showcase-desc">Processing Floor</span>
+      </div>
+    </div>
+
+  </div>
 
   <!-- ── Lightbox ── -->
   <div id="lightbox" class="lightbox" style="display: none;" onclick="closeLightbox(event)">
@@ -180,7 +247,7 @@
     /* ── Lightbox Logic ── */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryItems = document.querySelectorAll('.showcase-card img');
 
     function openLightbox(index) {
       const imgSrc = galleryItems[index].src;
@@ -203,6 +270,19 @@
       if (lightbox.style.display === 'flex' && e.key === 'Escape') {
         closeLightbox({ target: lightbox });
       }
+    });
+
+    /* ── Scroll Reveal Intersection Observer ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.showcase-card').forEach(card => {
+      revealObserver.observe(card);
     });
   </script>
 
